@@ -1,10 +1,6 @@
-### 1. 포트폴리오제안
 
-우리회사 홍보 포트폴리오? 어때?
+# 관심있는 주제
 
----
-1. html + css + js/jquery 
-2. spring + mybatis + jstl
-3. spring boot + thymeleaf + jpa + mybatis   
-4. node + react
-5. flutter + spring boot + jpa + mybatis + react
+# 1. 외국 브랜드 자동차
+> 일단 기술력은 갖추고 있지를 않아서 레이아웃 위주로 생각해봄
+> 기술은 배우면서 적용해야 할 것 같음
