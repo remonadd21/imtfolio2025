@@ -9,7 +9,7 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  
   <style>
 
     /*nav*/
@@ -18,6 +18,33 @@
 
     /* VISUAL */
     div#demo {       height: 600px;    overflow: hidden; }
+    .fulls{width:100%; height:100%; position:relative; }
+    .fulls li{list-style:none; z-index:7; text-align:center;
+        top:-2000px; left:400px; text-shadow:5px 5px 5px rgba(0,0,0,0.3);
+         width:50px; color:#fff; font-size:50px; position:absolute;
+        text-transform:lowercase;
+        animation: mov 10s forwards;
+    }
+
+    .fulls .im94{font-size:5px;}
+    
+    .fulls .f{left:500px; animation-delay: 0s;}
+    .fulls .u{left:550px; animation-delay: 0.5s;}
+    .fulls .l{left:600px; animation-delay: 0.2s;}
+    .fulls .l2{left:650px; animation-delay: 0.7s;}
+    .fulls .s{left:700px; animation-delay: 0.8s;}
+    .fulls .t{left:750px; animation-delay: 0.1s;}
+    .fulls .a{left:800px; animation-delay: 0.7s;}
+    .fulls .c{left:850px;animation-delay: 0.5s;}
+    .fulls .k{left:900px; animation-delay: 0.2s;}
+    .fulls .im94{animation-delay: 1.2s; font-size:16px; left:630px; top:400px;}
+
+
+    @keyframes mov{
+        0%{top:-1000px;}
+        90%{top:400px; transform:rotatey(180deg);}
+        100%{top:260px; text-transform:uppercase;}
+    }
 
     /* about me */
     .info{ background-color: aliceblue; }
@@ -95,6 +122,18 @@
 
   <!-- visual -->
   <section  class="visual">
+    <ul class="fulls">
+        <li class="f">f</li>
+        <li class="u">u</li>
+        <li class="l">l</li>
+        <li class="l2">l</li>
+        <li class="s">s</li>
+        <li class="t">t</li>
+        <li class="a">a</li>
+        <li class="c">c</li>
+        <li class="k">k</li>
+        <li class="im94">impaerior94@gmail.com</li>
+    </ul>
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
@@ -136,7 +175,7 @@
                 <h4>Hong Gil Dong</h4>
                 <ul>
                     <li>impaerior94@gmail.com</li>
-                    <li><a href="https://github.com/remonadd21"> 
+                    <li><a href="https://remonadd21.github.io/imtfolio2025/"> 
                         깃허브 포트폴리오 </a></li>
                 </ul>
             </div><!-- col-sm-4 -->
@@ -257,16 +296,54 @@
     <div class="container">
         <h3 class="text-center">Contact Me</h3>
         <p class="text-center">  시무룩한 개발자 어흥이에게 문의 주세요! </p>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init({
+                    publicKey: "g_F3srgZ25BLObPZL",
+                });
+            })();
+            ////////////////////////////////////////////////////////////
+            function sendEmail( e ){
+                e.preventDefault(); // 무조건 전송막기
+                var templateParams = {
+                    name: document.getElementById("name").value,
+                    email:document.getElementById("email").value,
+                    title:document.getElementById("title").value,
+                    message:document.getElementById("message").value,
+                };
+
+                emailjs.send('impaeior94', 'template_eexs15c', templateParams).then(
+                (response) => {
+                    alert("메일 전송에 성공했습니다.");
+                    console.log('SUCCESS!', response.status, response.text);
+                },
+                (error) => {
+                    alert("메일 전송에 실패했습니다.");
+                    console.log('FAILED...', error);
+                },
+                );
+            }
+        </script>
         
-        <form action="/action_page.php">
+        <form onsubmit="sendEmail(event);">
+            <div class="mb-3 mt-3">
+                <label for="name" class="form-label">이름:</label>
+                <input type="text" class="form-control" id="name" 
+                       placeholder="이름을 적어주세요!" name="name">
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="email" class="form-label">이메일:</label>
+                <input type="text" class="form-control" id="email" 
+                       placeholder="이메일을 적어주세요!" name="email">
+            </div>
             <div class="mb-3 mt-3">
                 <label for="title" class="form-label">제목:</label>
                 <input type="text" class="form-control" id="title" 
                        placeholder="제목을 적어주세요!" name="title">
             </div>
             <div class="mb-3">
-                <label for="comment">Comments:</label>
-                <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>            
+                <label for="message">message:</label>
+                <textarea class="form-control" rows="5" id="message" name="message"></textarea>            
             </div>
             <div class="mb-3 text-end">
                 <button type="submit" class="btn btn-success">메일보내기</button>
