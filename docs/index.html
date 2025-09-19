@@ -26,7 +26,7 @@
         animation: mov 10s forwards;
     }
 
-    .fulls .im94{font-size:5px;}
+    .fulls .im94{font-size:16px; opacity:0;}
     
     .fulls .f{left:500px; animation-delay: 0s;}
     .fulls .u{left:550px; animation-delay: 0.5s;}
@@ -37,7 +37,8 @@
     .fulls .a{left:800px; animation-delay: 0.7s;}
     .fulls .c{left:850px;animation-delay: 0.5s;}
     .fulls .k{left:900px; animation-delay: 0.2s;}
-    .fulls .im94{animation-delay: 1.2s; font-size:16px; left:630px; top:400px;}
+    .fulls .im94{animation-delay: 1.2s; font-size:16px; left:630px; top:400px; 
+    opacity:1;}
 
 
     @keyframes mov{
@@ -299,7 +300,7 @@
         <script type="text/javascript">
             (function(){
                 emailjs.init({
-                    publicKey: "g_F3srgZ25BLObPZL",
+                    publicKey: "d0m0vkNzA4_yiwYKZ",
                 });
             })();
             ////////////////////////////////////////////////////////////
@@ -307,12 +308,12 @@
                 e.preventDefault(); // 무조건 전송막기
                 var templateParams = {
                     name: document.getElementById("name").value,
-                    email:document.getElementById("email").value,
+                    //email:document.getElementById("email").value,
                     title:document.getElementById("title").value,
                     message:document.getElementById("message").value,
                 };
 
-                emailjs.send('impaeior94', 'template_eexs15c', templateParams).then(
+                emailjs.send('impaerior94', 'template_eexs15c', templateParams).then(
                 (response) => {
                     alert("메일 전송에 성공했습니다.");
                     console.log('SUCCESS!', response.status, response.text);
@@ -331,10 +332,10 @@
                 <input type="text" class="form-control" id="name" 
                        placeholder="이름을 적어주세요!" name="name">
             </div>
-            <div class="mb-3 mt-3">
+            <!-- <div class="mb-3 mt-3">
                 <label for="email" class="form-label">이메일:</label>
                 <input type="text" class="form-control" id="email" 
-                       placeholder="이메일을 적어주세요!" name="email">
+                       placeholder="이메일을 적어주세요!" name="email"> -->
             </div>
             <div class="mb-3 mt-3">
                 <label for="title" class="form-label">제목:</label>
